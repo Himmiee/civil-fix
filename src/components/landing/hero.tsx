@@ -21,9 +21,9 @@ export default function Hero({ onReportClick }: HeroProps) {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-gray-900 mb-6">
               See It. Report It.<br />
-              <span className="text-primary">Improve Your<br />Community.</span>
+              <span className="text-primary">Improve Your<br className="sm:hidden" /> Community.</span>
             </h1>
 
             {/* Subheadline */}
@@ -46,7 +46,7 @@ export default function Hero({ onReportClick }: HeroProps) {
             </div>
 
             {/* Social Proof */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <div className="flex -space-x-3">
                 {[
                   "/avatars/1.png",
@@ -63,7 +63,7 @@ export default function Hero({ onReportClick }: HeroProps) {
                 ))}
               </div>
               <p className="text-sm font-medium text-gray-600 leading-snug">
-                Join 4,300+ citizens making a difference<br />
+                Join 4,300+ citizens making a difference<br className="hidden sm:block" />
                 in their communities
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Hero({ onReportClick }: HeroProps) {
             />
 
             {/* Floating UI: Sleek Issue Card */}
-            <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:left-8 sm:bottom-8 bg-white rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 p-3 w-auto sm:w-[260px] z-10 transition-transform hover:-translate-y-1 duration-300">
+            <div className="hidden sm:block absolute bottom-6 left-6 right-6 sm:right-auto sm:left-8 sm:bottom-8 bg-white rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 p-3 w-auto sm:w-[260px] z-10 transition-transform hover:-translate-y-1 duration-300">
               <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3">
                 <Image
                   src="/pothole.png"
