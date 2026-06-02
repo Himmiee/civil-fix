@@ -90,7 +90,7 @@
   --color-error: var(--error);
   --color-error-light: var(--error-light);
 
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 10px;
