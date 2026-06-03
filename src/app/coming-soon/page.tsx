@@ -33,20 +33,20 @@ const FEATURES: PipelineFeature[] = [
     title: "Interactive Civic Map",
     desc: "Visualize active reports geographically, filter by category, and track resolve states in real time.",
     status: "In Development",
-    statusColor: "bg-gray-900",
+    statusColor: "bg-blue-500",
     icon: Map,
-    iconBg: "bg-gray-50",
-    iconColor: "text-gray-900",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-600",
   },
   {
     id: "rewards",
     title: "Gamified Civic Rewards",
     desc: "Earn impact points and unlock exclusive responder badges for reporting local issues.",
     status: "Testing",
-    statusColor: "bg-gray-900",
+    statusColor: "bg-indigo-500",
     icon: Trophy,
-    iconBg: "bg-gray-50",
-    iconColor: "text-gray-900",
+    iconBg: "bg-indigo-50",
+    iconColor: "text-indigo-600",
   },
   {
     id: "analytics",
@@ -56,7 +56,7 @@ const FEATURES: PipelineFeature[] = [
     statusColor: "bg-gray-400",
     icon: BarChart3,
     iconBg: "bg-gray-50",
-    iconColor: "text-gray-900",
+    iconColor: "text-gray-500",
   },
 ];
 
@@ -84,15 +84,16 @@ export default function ComingSoon() {
 
       <main className="flex-1 bg-white relative overflow-hidden flex flex-col justify-center min-h-[85vh]">
         {/* Soft background decor */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gray-100/40 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-50/30 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto w-full px-6 py-16 md:py-24 relative z-10 text-center flex flex-col items-center">
           
-          {/* Label */}
-          <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-4 block">
-            Coming Soon
-          </span>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100 mb-6">
+            <Sparkles className="size-3.5 text-blue-500" />
+            <span>Coming Soon</span>
+          </div>
 
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
@@ -113,7 +114,7 @@ export default function ComingSoon() {
                 >
                   <div>
                     {/* Icon */}
-                    <Icon className="size-8 text-gray-400 mb-6" />
+                    <Icon className={`size-8 ${feature.iconColor} mb-6`} />
 
                     <h3 className="text-gray-900 font-bold text-[16px] mb-2">{feature.title}</h3>
                     <p className="text-gray-500 text-[13px] leading-relaxed mb-6">{feature.desc}</p>
@@ -139,8 +140,8 @@ export default function ComingSoon() {
             </p>
 
             {isSuccess ? (
-              <div className="flex flex-col items-center justify-center py-2 text-gray-800 font-semibold gap-2 animate-fade-in">
-                <CheckCircle2 className="size-8 stroke-[2.5] text-gray-900" />
+              <div className="flex flex-col items-center justify-center py-2 text-emerald-600 font-semibold gap-2 animate-fade-in">
+                <CheckCircle2 className="size-8 stroke-[2.5] text-emerald-500" />
                 <p className="text-sm">Success! You are on the VIP notification list.</p>
               </div>
             ) : (
