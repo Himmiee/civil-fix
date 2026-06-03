@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MapPin, Flag, Search, Check, Clock, ShieldAlert, Zap, Droplets, Trash2, CheckCircle2 } from "lucide-react";
 
@@ -39,10 +40,12 @@ export default function Hero({ onReportClick }: HeroProps) {
                 <Flag className="mr-2 size-[18px]" />
                 Report an Issue
               </Button>
-              <Button variant="outline" className="w-full sm:w-auto h-12 px-8 border-gray-200 text-gray-700 hover:bg-gray-50 font-semibold text-[15px]">
-                <MapPin className="mr-2 size-[18px]" />
-                Explore Community Map
-              </Button>
+              <Link href="/coming-soon" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full h-12 px-8 border-gray-200 text-gray-700 hover:bg-gray-50 font-semibold text-[15px]">
+                  <MapPin className="mr-2 size-[18px]" />
+                  Explore Community Map
+                </Button>
+              </Link>
             </div>
 
             {/* Social Proof */}
