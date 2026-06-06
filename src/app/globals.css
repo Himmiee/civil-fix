@@ -3,6 +3,12 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant data-open (&[data-open]);
+@custom-variant data-closed (&[data-closed]);
+@custom-variant data-placeholder (&[data-placeholder]);
+@custom-variant data-disabled (&[data-disabled]);
+@custom-variant data-highlighted (&[data-highlighted]);
+@custom-variant data-selected (&[data-selected]);
 
 html {
   scrollbar-gutter: stable;

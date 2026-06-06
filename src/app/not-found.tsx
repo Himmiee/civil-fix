@@ -44,7 +44,7 @@ export default function NotFound() {
           <span>4</span>
           
           {/* The magnifying search eye "0" */}
-          <div className="relative mx-3.5 size-20 md:size-28 rounded-full border-[10px] border-gray-900 bg-white flex items-center justify-center shrink-0">
+          <div className="relative mx-3.5 size-20 md:size-28 rounded-full border-10 border-gray-900 bg-white flex items-center justify-center shrink-0">
             {/* The pupil (Eye) */}
             <div className="size-6 md:size-8 bg-gray-900 rounded-full absolute animate-search-look" />
             
