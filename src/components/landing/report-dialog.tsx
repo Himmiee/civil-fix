@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -60,6 +60,27 @@ export default function ReportDialog({ open, onOpenChange }: ReportDialogProps) 
     },
   });
 
+  // Reset form when dialog is closed
+  useEffect(() => {
+    if (!open) {
+      reset({
+        category: "",
+        title: "",
+        description: "",
+        location: "",
+      });
+      setSelectedFile(null);
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        setPreviewUrl(null);
+      }
+      setFileError(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
+  }, [open, reset]);
+
   const categoryValue = watch("category");
 
   const handleUploadClick = () => {
@@ -118,7 +139,7 @@ export default function ReportDialog({ open, onOpenChange }: ReportDialogProps) 
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 pt-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 pt-2 min-w-0 w-full">
           {/* Category */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
@@ -197,7 +218,7 @@ export default function ReportDialog({ open, onOpenChange }: ReportDialogProps) 
               Attach Photo
             </label>
             {previewUrl ? (
-              <div className="relative flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50/50 p-2 pr-12 transition-all duration-300 animate-fade-in">
+              <div className="relative flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50/50 p-2 pr-12 transition-all duration-300 animate-fade-in w-full min-w-0">
                 <div className="relative size-12 overflow-hidden rounded-md border bg-white">
                   <img
                     src={previewUrl}

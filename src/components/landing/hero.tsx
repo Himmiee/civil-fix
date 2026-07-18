@@ -16,15 +16,12 @@ export default function Hero({ onReportClick }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column — Copy (Approx 45%) */}
           <div className="lg:col-span-5 lg:pr-4">
-            {/* Badge */}
-            <div className="inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-primary mb-8">
-              Stronger communities start with you
-            </div>
+
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-gray-900 mb-6">
-              See It. Report It.<br />
-              <span className="text-primary">Improve Your<br className="sm:hidden" /> Community.</span>
+            <h1 className="text-[2.5rem] sm:text-6xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-gray-900 mb-6">
+              See It. Report It. <br className="hidden sm:inline" />
+              <span className="text-primary">Improve Your Community.</span>
             </h1>
 
             {/* Subheadline */}
