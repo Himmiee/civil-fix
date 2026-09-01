@@ -74,7 +74,7 @@ export default function Sidebar({
               href={link.href}
               className={`flex items-center ${isCollapsed ? 'justify-center px-0' : 'px-4'} py-3 rounded-lg font-semibold text-[15px] transition-colors ${
                 isActive 
-                  ? "bg-white text-primary shadow-sm border border-slate-200" 
+                  ? "bg-white text-primary border border-slate-200" 
                   : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
               }`}
               title={isCollapsed ? link.name : undefined}
