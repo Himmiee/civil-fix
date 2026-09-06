@@ -3,7 +3,7 @@
 import { MapPin, ThumbsUp, Clock, AlertCircle, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-export type IssueStatus = "Reported" | "In Progress" | "Resolved";
+export type IssueStatus = "Reported" | "Under Review" | "In Progress" | "Resolved";
 export type IssueSeverity = "Low" | "Mid" | "High";
 
 export interface IssueCardProps {
@@ -27,6 +27,13 @@ function StatusIndicator({ status }: { status: IssueStatus }) {
         <div className="flex items-center text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-full">
           <Clock className="w-3 h-3 mr-1" />
           In Progress
+        </div>
+      );
+    case "Under Review":
+      return (
+        <div className="flex items-center text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+          <AlertCircle className="w-3 h-3 mr-1" />
+          Under Review
         </div>
       );
     case "Resolved":
